@@ -23,7 +23,7 @@ This app can be used by a Defenseive Coordinator to predict the play an opponent
 run in a certain game situation.\n
 Alternatively, this app can be used by an Offensive Coordinator to see what play the opposing team
 may be expecting them to run.\n
-Use the fields on the sidebar to the left to input the team you are playing against 
+Use the fields on the sidebar on the left side of the page to input the team you are playing against 
 and the game situation. The predicted play will be displayed at the bottom of the page.
 """)
 
@@ -32,12 +32,12 @@ def user_input():
     #season = int(st.sidebar.slider("Distance to endzone", 2009, 2018, 2009))
     team = st.sidebar.selectbox("Offensive Team", team_list)
     endzone_distance = st.sidebar.slider("Yards to endzone", 0, 100, 50)
-    down = st.sidebar.slider("Down", 1, 4, 1)
+    down = st.sidebar.number_input("Down", 1, 4, 1)
     if endzone_distance < 10:
         distance = st.sidebar.number_input("Distance needed for 1st down", 0, endzone_distance, endzone_distance)
     else:
         distance = st.sidebar.number_input("Distance needed for 1st down", 0, endzone_distance, 10)
-    game_seconds_remaining = st.sidebar.slider("Game time remaining (s)", 0, 3600, 3600)
+    game_seconds_remaining = st.sidebar.slider("Game time remaining (seconds)", 0, 3600, 3600)
     formation = st.sidebar.selectbox("Formation", ("Under Center", "Shotgun", "Special Teams"))
     if formation == "Shotgun":
         shotgun = 1
@@ -54,7 +54,6 @@ def user_input():
 
     # Store and reutrn input
     input_data = {
-        #"season": season,
         "team": team,
         "endzone_distance": endzone_distance,
         "game_seconds_remaining": game_seconds_remaining,
