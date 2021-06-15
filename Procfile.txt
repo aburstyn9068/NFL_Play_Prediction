@@ -1,0 +1,1 @@
+web: sh setup.sh && streamlit run NFL_Play_Prediction.py
