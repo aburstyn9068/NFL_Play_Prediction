@@ -41,7 +41,7 @@ run in a certain game situation.\n
 Alternatively, this app can be used by an Offensive Coordinator to see what play the opposing team
 may be expecting them to run.\n
 Use the fields on the sidebar to the left to input the team you are playing against 
-and the game situation. The predicited play will be displayed at the bottom of the page.
+and the game situation. The predicted play will be displayed at the bottom of the page.
 """)
 
 # Get user input values
