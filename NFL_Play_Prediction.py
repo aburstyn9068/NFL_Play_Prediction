@@ -117,7 +117,7 @@ st.subheader(f"Prediction model accuracy for {team}")
 st.write(str(round(accuracy_score(y_test, y_pred)*100,2))+"%")
 
 # Display the input
-st.subheader("Current game situation:")
+st.subheader("Game situation to predict:")
 st.write(play_input)
 
 # Get play prediction
