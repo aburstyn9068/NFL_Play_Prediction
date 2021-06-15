@@ -35,18 +35,21 @@ if flag == False:
 
 # Title
 st.write("""
-# Football Play Prediction for the 2017 Season
-Predict a teams offensive play given the game situation
+# Football Play Prediction for the 2017 NFL Season
+This app can be used by a Defenseive Coordinator to predict the play an opponent is likely to
+run in a certain game situation.\n
+Use the fields on the sidebar to the left to input the team you are playing against 
+and the game situation. The predicited play will be displayed at the bottom of the page.
 """)
 
 # Get user input values
 def user_input():
     #season = int(st.sidebar.slider("Distance to endzone", 2009, 2018, 2009))
-    team = st.sidebar.selectbox("Pick the team on offense", team_list)
-    endzone_distance = st.sidebar.slider("Distance to endzone", 0, 100, 50)
-    game_seconds_remaining = st.sidebar.slider("Game time remaining (s)", 0, 3600, 3600)
+    team = st.sidebar.selectbox("Offensive Team", team_list)
     down = st.sidebar.slider("Down", 1, 4, 1)
-    distance = st.sidebar.number_input("Distance to 1st down", 0, 100, 10)
+    distance = st.sidebar.number_input("Distance needed for 1st down", 0, 100, 10)
+    endzone_distance = st.sidebar.slider("Yards to endzone", 0, 100, 50)
+    game_seconds_remaining = st.sidebar.slider("Game time remaining (s)", 0, 3600, 3600)
     formation = st.sidebar.selectbox("Formation", ("Under Center", "Shotgun", "Special Teams"))
     if formation == "Shotgun":
         shotgun = 1
@@ -89,7 +92,7 @@ team = play_input["team"].values[0]
 team_plays = plays.loc[plays["posteam"]==team]
 
 # Show data
-st.subheader("Previous Plays Data:")
+st.subheader("Previous Games Play Data:")
 st.dataframe(team_plays)
 
 # Split data into independent and dependent variables
@@ -110,11 +113,11 @@ classifier.fit(X_train, y_train)
 y_pred = classifier.predict(X_test)
 
 # Check accuracy
-st.subheader("Prediction Model Accuracy")
+st.subheader(f"Prediction model accuracy for {team}")
 st.write(str(round(accuracy_score(y_test, y_pred)*100,2))+"%")
 
 # Display the input
-st.subheader("Current game information:")
+st.subheader("Current game situation:")
 st.write(play_input)
 
 # Get play prediction
