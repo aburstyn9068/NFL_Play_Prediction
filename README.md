@@ -1,7 +1,11 @@
 # Play_Prediction
 Machine learning model and interactive web application to predict a football teams next play.
 
-This repository contains the code files used to create a web application for predicting a football teams next play. Ther code is written in python and uses the Scikit-learn library to create the prediciton model, as well as the Streamlit library to create an app to interact with the data. The app is deployed using Heroku. The data used in this project came from:
+This repository contains the code files used to create a web application for predicting a football teams next play. 
+
+The app can be used by a Defenseive Coordinator to predict the play an opponent is likely to run in a certain game situation. Alternatively, the app can be used by an Offensive Coordinator to see what play the opposing team may be expecting them to run.
+
+The code is written in python and uses the Scikit-learn library to create the prediciton model, as well as the Streamlit library to create an app to interact with the data. The app is deployed using Heroku. The data used in this project came from:
 https://www.kaggle.com/maxhorowitz/nflplaybyplay2009to2016?select=NFL+Play+by+Play+2009-2018+%28v5%29.csv.
 
 The dataset was extremly large and reduced to only plays from the 2017 season using a Jupyter Notebook file. The data gets filtered by a specific team to analyze and then gets split into training and testsing sets. The independent variables used for the prediction model were:
