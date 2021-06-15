@@ -58,8 +58,8 @@ def user_input():
     else:
         no_huddle = 1
     score_differential_post = st.sidebar.number_input("Offensive team score differential (- if losing)", -100, 100, 0)
-    posteam_timeouts_remaining = st.sidebar.selectbox("Offense TOL", (3, 2, 1))
-    defteam_timeouts_remaining = st.sidebar.selectbox("Defense TOL", (3, 2, 1))
+    posteam_timeouts_remaining = st.sidebar.selectbox("Offense TOL", (3, 2, 1, 0))
+    defteam_timeouts_remaining = st.sidebar.selectbox("Defense TOL", (3, 2, 1, 0))
 
     # Store and reutrn input
     input_data = {
@@ -125,4 +125,4 @@ play_prediction = classifier.predict(X_predict)
 
 # Display predicted play
 st.subheader("Predicted Play: ")
-st.write(play_prediction[0].title())
+st.write(play_prediction[0].title().replace("_", " "))
