@@ -50,7 +50,10 @@ def user_input():
     team = st.sidebar.selectbox("Offensive Team", team_list)
     endzone_distance = st.sidebar.slider("Yards to endzone", 0, 100, 50)
     down = st.sidebar.slider("Down", 1, 4, 1)
-    distance = st.sidebar.number_input("Distance needed for 1st down", 0, endzone_distance, 10)
+    if endzone_distance < 10:
+        distance = st.sidebar.number_input("Distance needed for 1st down", 0, endzone_distance, endzone_distance)
+    else:
+        distance = st.sidebar.number_input("Distance needed for 1st down", 0, endzone_distance, 10)
     game_seconds_remaining = st.sidebar.slider("Game time remaining (s)", 0, 3600, 3600)
     formation = st.sidebar.selectbox("Formation", ("Under Center", "Shotgun", "Special Teams"))
     if formation == "Shotgun":
