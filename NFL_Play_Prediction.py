@@ -48,9 +48,9 @@ and the game situation. The predicited play will be displayed at the bottom of t
 def user_input():
     #season = int(st.sidebar.slider("Distance to endzone", 2009, 2018, 2009))
     team = st.sidebar.selectbox("Offensive Team", team_list)
-    down = st.sidebar.slider("Down", 1, 4, 1)
-    distance = st.sidebar.number_input("Distance needed for 1st down", 0, 100, 10)
     endzone_distance = st.sidebar.slider("Yards to endzone", 0, 100, 50)
+    down = st.sidebar.slider("Down", 1, 4, 1)
+    distance = st.sidebar.number_input("Distance needed for 1st down", 0, endzone_distance, 10)
     game_seconds_remaining = st.sidebar.slider("Game time remaining (s)", 0, 3600, 3600)
     formation = st.sidebar.selectbox("Formation", ("Under Center", "Shotgun", "Special Teams"))
     if formation == "Shotgun":
