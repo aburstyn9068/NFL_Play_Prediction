@@ -38,6 +38,8 @@ st.write("""
 # Football Play Prediction for the 2017 NFL Season
 This app can be used by a Defenseive Coordinator to predict the play an opponent is likely to
 run in a certain game situation.\n
+Alternatively, this app can be used by an Offensive Coordinator to see what play the opposing team
+may be expecting them to run.\n
 Use the fields on the sidebar to the left to input the team you are playing against 
 and the game situation. The predicited play will be displayed at the bottom of the page.
 """)
