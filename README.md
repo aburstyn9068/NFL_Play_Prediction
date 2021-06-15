@@ -1,4 +1,4 @@
-# Play_Prediction
+# NFL Play Prediction
 Machine learning model and interactive web application to predict a football teams next play.
 
 This repository contains the code files used to create a web application for predicting a football teams next play. 
