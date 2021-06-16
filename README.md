@@ -33,6 +33,8 @@ The page is displayed with the user input are on a sidebar on the left side of t
 
 The page can be viewed at: https://nfl-play-prediction.herokuapp.com/.
 
+![App Example](/images/app_example.png)
+
 Limitations / Upgrades:
 One of the main limitations to this play prediction app is that it does not include detailed information about specific offensive formation or any defensive formation information. These metrics were not analyzed because the information was not available. Having this information included in the model can lead to a more detailed analysis as certain formation and player personel packages may give have prectiable patterns in regard to play calling. Aditionally, the offensive play run may be a result of the defensive formation.
 
