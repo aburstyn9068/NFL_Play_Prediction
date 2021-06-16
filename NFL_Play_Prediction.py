@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
+from datetime import time, timedelta
 import streamlit as st
 
 # Upload the data only when first opening the app
@@ -37,7 +38,12 @@ def user_input():
         distance = st.sidebar.number_input("Distance needed for 1st down", 0, endzone_distance, endzone_distance)
     else:
         distance = st.sidebar.number_input("Distance needed for 1st down", 0, endzone_distance, 10)
-    game_seconds_remaining = st.sidebar.slider("Game time remaining (seconds)", 0, 3600, 3600)
+    quarter = st.sidebar.slider("Quarter", 1, 4, 1)
+    game_time_remaining = st.sidebar.slider("Time remaining in the quarter", time(0,0,0), time(0,15,0), time(0,15,0), timedelta(seconds=1), "mm:ss")
+    time_q = (4-quarter)*15*60
+    time_min = int(game_time_remaining.minute) * 60
+    time_sec = int(game_time_remaining.second)
+    game_seconds_remaining = time_q + time_min + time_sec
     formation = st.sidebar.selectbox("Formation", ("Under Center", "Shotgun", "Special Teams"))
     if formation == "Shotgun":
         shotgun = 1
@@ -49,8 +55,8 @@ def user_input():
     else:
         no_huddle = 1
     score_differential_post = st.sidebar.number_input("Offensive team score differential (- if losing)", -100, 100, 0)
-    posteam_timeouts_remaining = st.sidebar.selectbox("Offense TOL", (3, 2, 1, 0))
-    defteam_timeouts_remaining = st.sidebar.selectbox("Defense TOL", (3, 2, 1, 0))
+    posteam_timeouts_remaining = st.sidebar.slider("Offense TOL", 0, 3, 3)
+    defteam_timeouts_remaining = st.sidebar.slider("Defense TOL", 0, 3, 3)
 
     # Store and reutrn input
     input_data = {
