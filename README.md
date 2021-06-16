@@ -8,7 +8,7 @@ The app can be used by a Defenseive Coordinator to predict the play an opponent 
 The code is written in python and uses the Scikit-learn library to create the prediciton model, as well as the Streamlit library to create an app to interact with the data. The app is deployed using Heroku. The data used in this project came from:
 https://www.kaggle.com/maxhorowitz/nflplaybyplay2009to2016?select=NFL+Play+by+Play+2009-2018+%28v5%29.csv.
 
-The dataset was extremly large and reduced to only plays from the 2017 season using a Jupyter Notebook file. The data gets filtered by a specific team to analyze and then gets split into training and testsing sets. The independent variables used for the prediction model were:
+The dataset was extremly large and reduced to only plays from the 2017 season using a Jupyter Notebook file. I chose to isolate a single season, as off-season changes in player and coaching personnel may make a prior seasons data unreliable for future predictions due to changes in play calling strategy. The data gets filtered by a specific team to analyze and then gets split into training and testsing sets. The independent variables used for the prediction model were:
 - Distance from the endzone (yards)
 - Down
 - Distance needed for 1st down
