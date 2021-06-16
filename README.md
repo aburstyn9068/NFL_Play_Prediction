@@ -12,7 +12,7 @@ The dataset was extremly large and reduced to only plays from the 2017 season us
 - Distance from the endzone (yards)
 - Down
 - Distance needed for 1st down
-- Game time remaining (seconds)
+- Game time remaining
 - Offensive formation (Shoutgun, Under Center, Special Teams)
 - Huddle/Hurry-Up
 - Offensive team score differential (- if losing)
