@@ -20,7 +20,7 @@ if flag == False:
 # Title
 st.write("""
 # Football Play Prediction for the 2017 NFL Season
-This app can be used by a Defenseive Coordinator to predict the play an opponent is likely to
+This app can be used by a Defensive Coordinator to predict the play an opponent is likely to
 run in a certain game situation.\n
 Alternatively, this app can be used by an Offensive Coordinator to see what play the opposing team
 may be expecting them to run.\n
