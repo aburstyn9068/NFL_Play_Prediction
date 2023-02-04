@@ -31,7 +31,7 @@ The page is displayed with the user input are on a sidebar on the left side of t
 - The game situation being analyzed as input by the user
 - The play prediction based on the user inputs.
 
-The page can be viewed at: https://nfl-play-prediction.herokuapp.com/.
+The page can be viewed at: https://aburstyn9068-nfl-play-prediction-nfl-play-prediction-969en8.streamlit.app/.
 
 ![App Example](/images/app_example.png)
 
